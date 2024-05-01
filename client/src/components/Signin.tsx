@@ -1,8 +1,13 @@
 import { FaGithub } from "react-icons/fa6";
+import {motion} from "framer-motion";
 
 const Signin = () => {
   return (
-    <div className="my-auto bg-[#1D2038]/70 rounded-lg w-[32rem]">
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.2 }}
+    className="my-auto bg-[#1D2038]/70 rounded-lg w-[32rem]">
       <div className="text-center py-20 px-8">
         <h1 className="text-3xl font-semibold">SIGN IN</h1>
         <div className="mt-8 text-sm">
@@ -16,7 +21,7 @@ const Signin = () => {
           <span>Sign in with GitHub</span>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
