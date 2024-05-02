@@ -16,14 +16,14 @@ const Repos = () => {
         <h1 className="text-center text-4xl font-bold">List Of Repositories</h1>
         <hr className="w-[18rem] mx-auto border-2 border-[#4760FF] my-4" />
       </motion.div>
-      <div className="flex justify-between flex-wrap">
+      <div className="md:flex justify-between flex-wrap">
         {repos.map((repo, index) => {
           return (
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 + index / 10 }}
-              className="w-1/2 flex justify-center"
+              className="md:w-1/2 flex justify-center"
               key={index}
             >
               <RepoItem />

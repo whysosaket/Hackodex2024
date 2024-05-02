@@ -8,8 +8,8 @@ const repos = [
 
 const Contributions = () => {
   return (
-    <div className="flex w-full my-6">
-      <div className="w-4/6">
+    <div className="flex md:flex-row flex-col-reverse w-full my-6">
+      <div className="md:w-4/6">
         <motion.div
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ const Contributions = () => {
                   initial={{ opacity: 0, y: 100 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 + index / 10 }}
-                  className="w-4/5 flex justify-center"
+                  className="md:w-4/5 flex justify-center"
                   key={index}
                 >
                   <ContributionItem />
@@ -36,7 +36,7 @@ const Contributions = () => {
           }
         </div>
       </div>
-      <div className="w-2/6">
+      <div className="md:w-2/6 mb-8 md:mb-0">
         <motion.div
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}

@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import _404 from "./pages/_404";
 import Contributions from "./pages/Contributions";
 import Repos from "./pages/Repos";
+import About from "./pages/About";
 
 function App() {
 
@@ -22,11 +23,12 @@ function App() {
     }
       <div className="">
         <Navbar setVisible={setIsVisible} />
-        <div className="px-12">
+        <div className="md:px-12 px-8">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contributions" element={<Contributions />} />
             <Route path="/repos" element={<Repos />} />
+            <Route path="/about" element={<About />} />
             <Route path="*" element={<_404 />} />
           </Routes>
         </div>

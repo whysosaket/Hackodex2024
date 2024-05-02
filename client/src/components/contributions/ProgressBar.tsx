@@ -10,7 +10,7 @@ const ProgressBar = () => {
     initial={{ opacity: 0, x: 100 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.5, delay: 0.3 }}
-    className="w-3/5 bg-white/10 p-6 rounded-xl mt-8">
+    className="w-2/3 md:w-3/5 bg-white/10 p-6 rounded-xl mt-8">
       <CircularProgressbar
         value={value}
         maxValue={1}

@@ -3,7 +3,7 @@
 const RepoItem = () => {
   return (
     <>
-    <div className='w-4/5 mx-auto flex justify-center align-middle border-b-2 border-blue-200 pt-8 pb-4'>
+    <div className='md:w-4/5 mx-auto flex justify-center align-middle border-b-2 border-blue-200 pt-8 pb-4'>
         <div className='left w-1/2'>
             <h1 className='text-[1.2rem] font-semibold my-2'>ayush-Shandilya/STILLLEARN</h1>
             <div>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <>
-      <div className="flex md:flex-row flex-col-reverse my-8">
+      <div className="flex my-8">
         <div className="">
           <motion.img
             initial={{ opacity: 0, y: 100 }}
@@ -16,15 +16,15 @@ const Hero = () => {
             className="w-full absolute -z-20 left-0 bottom-0"
           />
         </div>
-        <div className="left md:w-1/2 flex justify-center align-middle">
+        <div className="left w-1/2 flex justify-center align-middle">
           <div className="my-auto">
             <motion.h1
               initial={{ x: -400, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-[4rem] md:text-[5rem] font-semibold tracking-wide leading-[6rem]"
+              className="text-[4rem] font-semibold tracking-wide leading-[6rem]"
             >
-              Hack and learn with Hackodex
+              Begin Your Open Source Journey with Hackodex 2.0
             </motion.h1>
             <div className="mt-8">
               <motion.h2
@@ -66,14 +66,14 @@ const Hero = () => {
             <div className="blur-3xl bg-indigo-400/15 -z-20 absolute left-0 top-44 h-[36rem] w-[20rem] rounded-b-[80rem] rounded-t-[80rem]"></div>
           </div>
         </div>
-        <div className="right md:w-1/2 flex justify-center">
+        <div className="right w-1/2 flex justify-center">
           <motion.img
             initial={{ x: 400, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             src={Mascot}
             alt="mascot"
-            className="md:w-4/5 mx-auto"
+            className="w-4/5 mx-auto"
           />
           <div className="blur-3xl bg-indigo-400/20 -z-10 absolute h-[36rem] w-[20rem] rounded-b-[80rem] rounded-t-[80rem]"></div>
         </div>

@@ -3,7 +3,7 @@
 const EventItem = () => {
   return (
     <div className="">
-        <div className="bg-white/10 mx-4 w-4/5 rounded-lg p-8">
+        <div className="bg-white/10 mx-4 md:w-4/5 rounded-lg p-8">
             <h1 className="text-center font-semibold text-2xl">
                 Trivia Time
             </h1>
