@@ -1,0 +1,4 @@
+VITE_PROXY_URL="http://localhost:3000/getAuthToken"
+VITE_ClientSecretKey=""
+VITE_ClientId = ""
+VITE_RedirectedURI="http://localhost:5173/"
