@@ -22,7 +22,7 @@ function App() {
       </div>
     }
       <div className="">
-        <Navbar setVisible={setIsVisible} />
+      <Navbar setVisible={setIsVisible} />
         <div className="md:px-12 px-8">
           <Routes>
             <Route path="/" element={<Home />} />
