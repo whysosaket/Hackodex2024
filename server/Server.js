@@ -35,10 +35,10 @@ app.post("/getAuthToken", async (req, res) => {
     console.log(data);
     
     // Send back the access token to the frontend
-    res.json({ "token" : token });
+    return res.json({ "token" : token });
   } catch (error) {
     console.error("Error exchanging code for access token:", error);
-    res.status(500).json({ error: "Internal server error" });
+    return res.status(500).json({ error: "Internal server error" });
   }
 });
 
