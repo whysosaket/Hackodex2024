@@ -1,17 +1,15 @@
-
-
-const ContributionItem = () => {
+const ContributionItem = ({ name, state, createdAt }) => {
   return (
     <div className="w-full py-2 mb-2 border-b-2 border-b-white">
         <h1 className="text-[1.4rem] font-semibold text-start">
-            Fixed Adopt Function
+            {name}
         </h1>
         <div className="text-sm">
-            <span className="text-[#FFC700]">State: </span> Closed
-            <span className="text-[#FF7A00] ml-3">created at: </span> 2021-10-10, 12:00
+            <span className="text-[#FFC700]">State: </span> {state}
+            <span className="text-[#FF7A00] ml-3">created at: </span> {createdAt}
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default ContributionItem
+export default ContributionItem;
