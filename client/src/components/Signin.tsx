@@ -1,4 +1,3 @@
-import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -8,7 +7,9 @@ const redirect_uri = import.meta.env.VITE_RedirectedURI;
 const Signin = () => {
   const handleGithubLogin = () => {
     // Redirect the user to GitHub OAuth flow
-    window.location.href = `https://github.com/login/oauth/authorize?client_id=${ClientId}&redirect_uri=${encodeURIComponent(redirect_uri)}&scope=user`;
+    window.location.href = `https://github.com/login/oauth/authorize?client_id=${ClientId}&redirect_uri=${encodeURIComponent(
+      redirect_uri
+    )}&scope=user`;
   };
 
   return (

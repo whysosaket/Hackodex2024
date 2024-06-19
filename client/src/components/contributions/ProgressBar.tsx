@@ -1,10 +1,13 @@
 // ProgressBar.js
-import React from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { motion } from "framer-motion";
 
-const ProgressBar = ({ value }) => {
+interface ProgressBarProps {
+  value: number;
+}
+
+const ProgressBar: React.FunctionComponent<ProgressBarProps> = ({ value }) => {
   return (
     <motion.div
       initial={{ opacity: 0, x: 100 }}

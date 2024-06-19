@@ -26,7 +26,7 @@ const Repos = () => {
               className="md:w-1/2 flex justify-center"
               key={index}
             >
-              <RepoItem />
+              <RepoItem repo={repo} />
             </motion.div>
           );
         })}

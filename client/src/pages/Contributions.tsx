@@ -1,5 +1,5 @@
 // Contributions.js
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 import ContributionItem from "../components/contributions/ContributionItem";
@@ -23,7 +23,7 @@ const Contributions = () => {
       axios
         .get("https://api.github.com/user/repos", {
           headers: {
-            Authorization: `Bearer ${token}`, 
+            Authorization: `Bearer ${token}`,
           },
         })
         .then((response) => {
@@ -60,10 +60,8 @@ const Contributions = () => {
               transition={{ duration: 0.5, delay: 0.2 + index / 10 }}
               className="md:w-4/5 flex justify-center"
             >
-              <ContributionItem
-                name={repo.name}
-                createdAt={repo.created_at}
-              />{" "}
+              {/* @ts-ignore */}
+              <ContributionItem name={repo.name} createdAt={repo.created_at} />{" "}
               {/* Pass repository data to ContributionItem */}
             </motion.div>
           ))}

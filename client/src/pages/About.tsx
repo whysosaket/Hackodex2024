@@ -1,11 +1,11 @@
-import Hero from "../components/about/Hero2"
+import Hero from "../components/about/Hero2";
 
 const About = () => {
   return (
     <div>
-        <Hero />
+      <Hero />
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

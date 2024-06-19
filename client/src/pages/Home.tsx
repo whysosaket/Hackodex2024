@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Events from "../components/home/Events";
 import Hero from "../components/home/Hero";
 import axios from "axios";
