@@ -13,7 +13,7 @@ const Faq = () => {
       {faqs.map((faq: FaqItem, index: number) => (
         <div
           key={index}
-          className="border-b border-[#fff] pb-3 md:pb-1 mb-8"
+          className={`border-b border-[#fff]  mb-8  ${index===selectedQuestion?"pb-4":"pb-1"}`}
           onClick={() => toggleQuestion(index)}
         >
           <div className="flex items-center justify-between">
