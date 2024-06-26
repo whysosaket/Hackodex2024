@@ -1,6 +1,7 @@
 import Mascot from "../../assets/mascot.png";
 import pathvector from "../../assets/pathvector.svg";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -54,6 +55,7 @@ const Hero = () => {
               >
                 Get Started
               </motion.button>
+              <Link to="/learnmore">
               <motion.button
                 initial={{ x: -370, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -62,6 +64,7 @@ const Hero = () => {
               >
                 Learn More
               </motion.button>
+              </Link>
             </div>
             <div className="blur-3xl bg-indigo-400/15 -z-20 absolute left-0 top-44 h-[36rem] w-[20rem] rounded-b-[80rem] rounded-t-[80rem]"></div>
           </div>

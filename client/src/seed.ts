@@ -11,5 +11,4 @@ const socials: socialsType[] = [
 const events: eventType[] = []
 
 
-
 export {socials, events};

@@ -9,6 +9,7 @@ import _404 from "./pages/_404";
 import Contributions from "./pages/Contributions";
 import Repos from "./pages/Repos";
 import About from "./pages/About";
+import LearnMore from "./pages/LearnMore";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/contributions" element={<Contributions />} />
             <Route path="/repos" element={<Repos />} />
             <Route path="/about" element={<About />} />
+            <Route path="/learnmore" element={<LearnMore />} />
             <Route path="*" element={<_404 />} />
           </Routes>
         </div>
