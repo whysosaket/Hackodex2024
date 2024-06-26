@@ -30,7 +30,7 @@ const LMhero = () => {
             <div className="blur-3xl bg-indigo-400/15 -z-20 absolute left-0 top-44 h-[36rem] w-[20rem] rounded-b-[80rem] rounded-t-[80rem]"></div>
           </div>
         </div>
-        <div className="right md:w-1/2 flex justify-center">
+        <div className="right md:w-1/2 flex justify-center mt-12 md:mt-0">
           <motion.img
             initial={{ x: 600, opacity: 0.0, rotateY: 0 }}
             animate={{ x: 0, opacity: 1, rotateY: 180 }}
