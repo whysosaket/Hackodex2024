@@ -1,4 +1,5 @@
 import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import { socials } from "../seed";
 
 const Footer = () => {
   return (
@@ -42,28 +43,28 @@ const Footer = () => {
             </nav>
             <div className="flex justify-center mt-8 space-x-6">
               <a
-                href="#"
+                href={socials[0].link}
                 className="text-gray-400 hover:text-gray-500 cursor-pointer"
               >
                 <span className="sr-only">Facebook</span>
                 <FaFacebook className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href={socials[1].link}
                 className="text-gray-400 hover:text-gray-500 cursor-pointer"
               >
                 <span className="sr-only">Instagram</span>
                 <FaInstagram className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href={socials[2].link}
                 className="text-gray-400 hover:text-gray-500 cursor-pointer"
               >
                 <span className="sr-only">Twitter</span>
                 <FaTwitter className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href={socials[3].link}
                 className="text-gray-400 hover:text-gray-500 cursor-pointer"
               >
                 <span className="sr-only">GitHub</span>

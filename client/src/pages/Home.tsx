@@ -29,7 +29,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col justify-center">
       <Hero />
       <Events />
     </div>
