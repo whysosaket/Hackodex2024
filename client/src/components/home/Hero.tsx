@@ -23,7 +23,7 @@ const Hero = () => {
               initial={{ x: -400, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-[3rem] md:text-[5rem] font-semibold md:tracking-wide md:leading-[6rem] text-center md:text-left"
+              className="text-[2.2rem] md:text-[5rem] font-semibold md:tracking-wide md:leading-[6rem] text-center md:text-left"
             >
               Hack and learn with Hackodex
             </motion.h1>
