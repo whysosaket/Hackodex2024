@@ -17,7 +17,7 @@ const Signin = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2 }}
-      className="my-auto bg-[#1D2038]/70 rounded-lg w-[32rem]"
+      className="my-auto bg-[#1D2038]/70 rounded-lg w-[32rem] mx-4"
     >
       <div className="text-center py-20 px-8">
         <h1 className="text-3xl font-semibold">SIGN IN</h1>
