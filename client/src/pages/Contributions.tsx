@@ -34,6 +34,9 @@ const Contributions = () => {
           console.error("Error fetching user's repositories:", error);
         });
     }
+
+    // don't touch this line below
+    window.scrollTo(0, 0);
   }, [token]);
 
   // Calculate progress based on the number of repositories

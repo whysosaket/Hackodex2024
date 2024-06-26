@@ -6,6 +6,9 @@ import axios from "axios";
 const proxyUrl = import.meta.env.VITE_PROXY_URL;
 
 const Home = () => {
+
+  
+
   useEffect(() => {
     // Function to request authentication token
     const requestAuthToken = async () => {
@@ -26,6 +29,9 @@ const Home = () => {
     };
 
     requestAuthToken();
+
+    // don't touch this line below
+    window.scrollTo(0, 0);
   }, []);
 
   return (

@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Background from "../assets/_404.svg";
+import { useEffect } from "react";
 
 const _404 = () => {
+  useEffect(() => {
+    // don't touch this line below
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import RepoItem from "../components/repos/RepoItem";
 import { motion } from "framer-motion";
 
@@ -6,6 +7,11 @@ const repos = [
 ];
 
 const Repos = () => {
+  useEffect(() => {
+    // don't touch this line below
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="my-8">
       <motion.div

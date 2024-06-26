@@ -1,14 +1,17 @@
-import Info from "../components/learnmore/Info"
-import LMhero from "../components/learnmore/LMhero"
-
+import Info from "../components/learnmore/Info";
+import LMhero from "../components/learnmore/LMhero";
+import { useEffect } from "react";
 
 const LearnMore = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
-    <LMhero />
-    <Info />
+      <LMhero />
+      <Info />
     </>
-  )
-}
+  );
+};
 
-export default LearnMore
+export default LearnMore;
