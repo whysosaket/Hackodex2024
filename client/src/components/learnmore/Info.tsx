@@ -2,6 +2,7 @@ import { about1, about2 } from "./lmseed"
 import Timeline from "./Timeline/Timeline"
 import { contributorGuidelines } from "./lmseed"
 import Resources from "./Resources/Resources"
+import Faq from "./Faq"
 
 
 const Info = () => {
@@ -37,6 +38,11 @@ const Info = () => {
     <div className="mt-12">
         <h1 className="text-[2.5rem] font-bold text-[#919ffb]">Resources For Beginners</h1>
         <Resources />
+    </div>
+
+    <div className="mt-12">
+        <h1 className="text-[2.5rem] font-bold text-[#919ffb]">FAQs</h1>
+        <Faq />
     </div>
 
 
