@@ -34,11 +34,43 @@ app.post("/getAuthToken", async (req, res) => {
     const token = data.access_token;
     console.log(data);
     
-    // Send back the access token to the frontend
+    
     return res.json({ "token" : token });
   } catch (error) {
     console.error("Error exchanging code for access token:", error);
     return res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+//Fetching all repositories for a specific topic
+app.get('/repos/:topic', async (req, res) => {
+  const topic = req.params.topic;
+  try {
+    const response = await axios.get(`https://api.github.com/search/repositories?q=topic:${topic}`, {
+      headers: { 
+        'Accept': 'application/vnd.github.v3+json'
+      }
+    });
+
+    const repositories = response.data.items; 
+    const repoDetails = repositories.map(repo => ({
+      name: repo.name,
+      owner: repo.owner.login,
+      html_url: repo.html_url,
+      description: repo.description,
+      created_at: repo.created_at,
+      updated_at: repo.updated_at,
+      language: repo.language,
+      stargazers_count: repo.stargazers_count,
+      forks_count: repo.forks_count,
+      open_issues_count: repo.open_issues_count,
+    }));
+
+    
+    res.json(repoDetails);
+  } catch (error) {
+    console.error('Error fetching repositories:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
