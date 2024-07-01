@@ -67,9 +67,40 @@ app.get('/repos/:topic', async (req, res) => {
     }));
 
     
-    res.json(repoDetails);
+    return res.json(repoDetails);
   } catch (error) {
     console.error('Error fetching repositories:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+//Fetching details of Accepted PRs
+app.get('/users/:username/:label', async (req, res) => {
+  const { username, label } = req.params;
+
+  try {
+    const response = await axios.get(`https://api.github.com/search/issues?q=label:${label}+type:pr+author:${username}+is:merged`, {
+      headers: {
+      
+        'Accept': 'application/vnd.github.v3+json'
+      }
+    });
+
+    const pullRequests = response.data.items;
+
+    const prDetails = pullRequests.map(pr => ({
+      title: pr.title,
+      url: pr.html_url,
+      state: pr.state,
+      merged_at: pr.pull_request.merged_at,
+      repository: pr.repository_url.split('/').slice(-1)[0], 
+      labels: pr.labels.map(label => label.name)
+    }));
+
+    
+    return res.json(prDetails);
+  } catch (error) {
+    console.error('Error fetching user pull requests:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
