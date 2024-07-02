@@ -1,47 +1,50 @@
 // Contributions.js
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import axios from "axios";
 import ContributionItem from "../components/contributions/ContributionItem";
 import ProgressBar from "../components/contributions/ProgressBar";
 
+const serverUrl = import.meta.env.VITE_SERVER;
+
 const Contributions = () => {
   const [repos, setRepos] = useState([]); // State to store repositories
-  const [token, setToken] = useState(""); // State to store the authentication token
+  const [progress, setProgress] = useState(0); // State to store progress
 
   useEffect(() => {
-    // Fetch the token from localStorage
-    const storedToken = localStorage.getItem("token");
-    if (storedToken) {
-      setToken(storedToken); // Set the token in state
-    }
-  }, []);
-
-  useEffect(() => {
-    if (token) {
-      // If token is available, fetch user's repositories from GitHub API
-      axios
-        .get("https://api.github.com/user/repos", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
-        .then((response) => {
-          console.log("User's repositories:", response.data);
-          setRepos(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching user's repositories:", error);
-        });
-    }
+    if(!localStorage.getItem("auth-token")) window.location.href = "/"; // Redirect to home if not logged in
+    getPRs();
 
     // don't touch this line below
     window.scrollTo(0, 0);
-  }, [token]);
+  }, []);
 
-  // Calculate progress based on the number of repositories
-  // This Logic we have to determine.
-  const progress = repos.length / 10; // Example calculation
+  const getPRs = async () => {
+    try {
+      const response = await fetch(`${serverUrl}/api/contributions/${localStorage.getItem("username")}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("auth-token")}`,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+
+      const data = await response.json();
+      setRepos(data.data);
+
+      // calculate progress
+      let total = data.merged;
+      total = total>=3?3:total;
+      // convert total to percentage
+      const percentage = (total / 3);
+      setProgress(percentage);
+
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
 
   return (
     <div className="flex md:flex-row flex-col-reverse w-full my-6">
@@ -51,7 +54,7 @@ const Contributions = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <h1 className="text-2xl font-bold">List Of Repositories</h1>
+          <h1 className="text-2xl font-bold">List Of PRs</h1>
           <hr className="w-[18rem] border-2 border-[#4760FF] my-1" />
         </motion.div>
         <div className="h-[36.5rem] overflow-y-scroll no-scrollbar">
@@ -64,7 +67,7 @@ const Contributions = () => {
               className="md:w-4/5 flex justify-center"
             >
               {/* @ts-ignore */}
-              <ContributionItem name={repo.name} createdAt={repo.created_at} />{" "}
+              <ContributionItem title={repo.title} name={repo.repository} createdAt={repo.merged_at} state={repo.state} url={repo.url} />{" "}
               {/* Pass repository data to ContributionItem */}
             </motion.div>
           ))}

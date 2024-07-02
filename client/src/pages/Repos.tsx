@@ -1,16 +1,52 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import RepoItem from "../components/repos/RepoItem";
 import { motion } from "framer-motion";
 
-const repos = [
-  1, 2, 3, 4, 56, 67, 8, 87, 64, 5, 45, 45, 45, 45, 45, 454, 23, 3, 3,
-];
+const topic = "hackodex2024";
 
 const Repos = () => {
+  const [repos, setRepos] = useState([]);
+
   useEffect(() => {
     // don't touch this line below
+    if(!localStorage.getItem("auth-token")) window.location.href = "/";
+    getRepos();
     window.scrollTo(0, 0);
   }, []);
+
+  const getRepos = async () => {
+    try {
+      const response = await fetch(
+        `https://api.github.com/search/repositories?q=topic:${topic}`,
+        {
+          headers: {
+            Accept: "application/vnd.github.v3+json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+
+      const data = await response.json();
+      const repositories = data.items;
+
+      const filteredRepos = repositories.map((repo: any) => {
+        return {
+          name: repo.name,
+          stars: repo.stargazers_count,
+          lang: repo.language,
+          issues: repo.open_issues,
+          username: repo.owner.login,
+          url: repo.html_url,
+        };
+      });
+      setRepos(filteredRepos);
+    } catch (err) {
+
+    }
+  };
 
   return (
     <div className="my-8">

@@ -1,15 +1,14 @@
 import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const ClientId = import.meta.env.VITE_ClientId;
-const redirect_uri = import.meta.env.VITE_RedirectedURI;
+const ClientId = import.meta.env.VITE_CLIENT_ID;
+const redirect_uri = import.meta.env.VITE_CLIENT_URL;
 
 const Signin = () => {
   const handleGithubLogin = () => {
     // Redirect the user to GitHub OAuth flow
-    window.location.href = `https://github.com/login/oauth/authorize?client_id=${ClientId}&redirect_uri=${encodeURIComponent(
-      redirect_uri
-    )}&scope=user`;
+    let url = `https://github.com/login/oauth/authorize?client_id=${ClientId}&redirect_uri=${redirect_uri}/midsign`;
+    window.location.href = url;
   };
 
   return (
@@ -27,13 +26,15 @@ const Signin = () => {
         </div>
       </div>
       <div className="bg-[#2E303C] px-8 py-6 flex justify-center rounded-b-lg">
-        <button
+
+        {/* login button */}
+        {<button
           className="bg-[#4760FF] hover:bg-[#4730FF] text-white rounded-md px-4 py-2 flex"
           onClick={handleGithubLogin}
         >
           <FaGithub className="w-6 h-6 mr-2" />
           <span>Sign in with GitHub</span>
-        </button>
+        </button>}
       </div>
     </motion.div>
   );
