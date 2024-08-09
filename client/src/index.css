@@ -25,24 +25,10 @@ html {
 
 @layer base {
   .font-outline-2 {
-    -webkit-text-stroke: 2px rgb(68, 48, 254);
+    -webkit-text-stroke: 2px rgb(104, 87, 254);
   }
   .font-outline-4 {
-    -webkit-text-stroke: 4px rgb(68, 48, 254);
+    -webkit-text-stroke: 4px rgb(143, 131, 255);
   }
 }
 
-/* body {
-  background-color: #18181e;
-  background-image: radial-gradient(
-      at 93% 48%,
-      hsla(330, 96%, 65%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 23% 4%, hsla(224, 63%, 71%, 1) 0px, transparent 50%),
-    radial-gradient(at 1% 22%, hsla(118, 98%, 76%, 1) 0px, transparent 50%),
-    radial-gradient(at 23% 70%, hsla(286, 70%, 70%, 1) 0px, transparent 50%),
-    radial-gradient(at 15% 8%, hsla(354, 67%, 66%, 1) 0px, transparent 50%),
-    radial-gradient(at 42% 63%, hsla(147, 88%, 79%, 1) 0px, transparent 50%),
-    radial-gradient(at 78% 31%, hsla(47, 90%, 72%, 1) 0px, transparent 50%);
-} */
