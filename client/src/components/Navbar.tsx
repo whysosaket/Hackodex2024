@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-mini.png";
 
 interface NavbarProps {
   setVisible: (value: boolean) => void;
@@ -32,7 +32,7 @@ const Navbar: React.FunctionComponent<NavbarProps> = (props) => {
         className="flex justify-between px-6 md:px-12 py-3 border-b-white/20 border-b-2"
       >
         <a href="/" className="font-bold text-3xl">
-          <img src={logo} className="w-40" />
+          <img src={logo} className="w-9" />
         </a>
         {!localStorage.getItem("auth-token") && (
           <button

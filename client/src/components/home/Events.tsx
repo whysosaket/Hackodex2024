@@ -5,7 +5,7 @@ import EventItem from "./EventItem";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 
-const items = [1, 2, 3, 4, 5, 6, 7, 9, 11, 11, 112, 12, 12];
+const items = [1, 2, 3];
 
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
