@@ -2,6 +2,7 @@ import Mascot from "../../assets/mascot.png";
 import pathvector from "../../assets/pathvector.svg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FlipWords } from "../../ui/flip-words";
 
 const Hero = () => {
   return (
@@ -23,9 +24,11 @@ const Hero = () => {
               initial={{ x: -400, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-[2.2rem] md:text-[5rem] font-semibold md:tracking-wide md:leading-[6rem] text-center md:text-left"
+              className="font-inter text-[2.2rem] md:text-[5rem] font-semibold md:tracking-wide md:leading-[6rem] text-center md:text-left"
             >
-              Hack and learn with Hackodex
+              <FlipWords words={["Build", "Hack"]} className="-ml-3" />
+              and learn
+              with Hackodex
             </motion.h1>
             <div className="mt-8">
               <motion.h2
