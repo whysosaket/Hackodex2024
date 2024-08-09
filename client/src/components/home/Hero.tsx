@@ -28,7 +28,7 @@ const Hero = () => {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="fonnt-inter text-[2.0rem] md:text-[4.5rem] font-semibold md:tracking-wide md:leading-[6rem] text-center md:text-left"
             >
-              <FlipWords words={["Build", "Hack"]} className="-ml-3" />
+              <FlipWords words={["Build", "Hack"]} className="-ml-3 md:font-outline-2 text-white md:text-transparent" />
               <span className="md:ml-2 md:mr-3">and learn with</span>
               <HackodexLogoLoader />
             </motion.h1>

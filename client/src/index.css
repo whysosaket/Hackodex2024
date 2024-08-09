@@ -22,3 +22,12 @@ html {
       scrollbar-width: none;  /* Firefox */
 }
 }
+
+@layer base {
+  .font-outline-2 {
+    -webkit-text-stroke: 2px rgb(68, 48, 254);
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 4px rgb(68, 48, 254);
+  }
+}
