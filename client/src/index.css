@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-color: #18181E;
+body {
+  background-color: #18181e;
   color: white;
 }
 
@@ -14,13 +14,13 @@ html {
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
- /* Hide scrollbar for IE, Edge and Firefox */
+  /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-}
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
 
 @layer base {
@@ -31,3 +31,18 @@ html {
     -webkit-text-stroke: 4px rgb(68, 48, 254);
   }
 }
+
+/* body {
+  background-color: #18181e;
+  background-image: radial-gradient(
+      at 93% 48%,
+      hsla(330, 96%, 65%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 23% 4%, hsla(224, 63%, 71%, 1) 0px, transparent 50%),
+    radial-gradient(at 1% 22%, hsla(118, 98%, 76%, 1) 0px, transparent 50%),
+    radial-gradient(at 23% 70%, hsla(286, 70%, 70%, 1) 0px, transparent 50%),
+    radial-gradient(at 15% 8%, hsla(354, 67%, 66%, 1) 0px, transparent 50%),
+    radial-gradient(at 42% 63%, hsla(147, 88%, 79%, 1) 0px, transparent 50%),
+    radial-gradient(at 78% 31%, hsla(47, 90%, 72%, 1) 0px, transparent 50%);
+} */

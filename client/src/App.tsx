@@ -10,12 +10,14 @@ import Contributions from "./pages/Contributions";
 import Repos from "./pages/Repos";
 import LearnMore from "./pages/LearnMore";
 import MidSign from "./pages/MidSign";
+import Mesh from "./components/Mesh";
 
 function App() {
 
   const [isVisible, setIsVisible] = useState(false);
   return (
-    <>
+    <div className="">
+    <Mesh />
     <Router>
     {isVisible &&
       <div className="w-full fixed flex justify-center align-middle h-screen bg-opacity-15 backdrop-blur-md">
@@ -37,7 +39,7 @@ function App() {
         <Footer />
       </div>
       </Router>
-    </>
+    </div>
   )
 }
 
