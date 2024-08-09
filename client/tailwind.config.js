@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        inter: ['Inter', "sans-serif"]
+        inter: ['Inter', "sans-serif"],
+        space: ["Space Mono", "monospace"]
       }
     },
   },

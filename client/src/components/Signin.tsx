@@ -7,7 +7,7 @@ const redirect_uri = import.meta.env.VITE_CLIENT_URL;
 const Signin = () => {
   const handleGithubLogin = () => {
     // Redirect the user to GitHub OAuth flow
-    let url = `https://github.com/login/oauth/authorize?client_id=${ClientId}&redirect_uri=${redirect_uri}/midsign`;
+    const url = `https://github.com/login/oauth/authorize?client_id=${ClientId}&redirect_uri=${redirect_uri}/midsign`;
     window.location.href = url;
   };
 
