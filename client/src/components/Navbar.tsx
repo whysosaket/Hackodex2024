@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo-mini.png";
+import logomini from "../assets/logo-mini.png";
+import logo from "../assets/logo.png";
 
 interface NavbarProps {
   setVisible: (value: boolean) => void;
@@ -23,6 +24,16 @@ const Navbar: React.FunctionComponent<NavbarProps> = (props) => {
     window.location.href = "/";
   };
 
+  const [isMobile, setIsMobile] = useState({});
+
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, []);
+
   return (
     <>
       <motion.nav
@@ -32,7 +43,9 @@ const Navbar: React.FunctionComponent<NavbarProps> = (props) => {
         className="flex justify-between px-6 md:px-12 py-3 border-b-white/20 border-b-2"
       >
         <a href="/" className="font-bold text-3xl">
-          <img src={logo} className="w-9" />
+        {
+          isMobile?<img src={logomini} className="w-9" />:<img src={logo} className="w-40 -ml-2 my-auto" />
+        }
         </a>
         {!localStorage.getItem("auth-token") && (
           <button
