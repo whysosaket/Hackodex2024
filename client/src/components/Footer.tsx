@@ -10,7 +10,8 @@ const Footer = () => {
             <nav className="flex flex-wrap justify-center -mx-5 -my-2">
               <div className="px-5 py-2">
                 <a
-                  href="#"
+                  href="https://codex-iter.in/"
+                  target="_blank"
                   className="text-base leading-6 text-gray-500 hover:text-gray-200 cursor-pointer"
                 >
                   About Us
@@ -18,7 +19,7 @@ const Footer = () => {
               </div>
               <div className="px-5 py-2">
                 <a
-                  href="#"
+                  href="mailto:codexiter@gmail.com"
                   className="text-base leading-6 text-gray-500 hover:text-gray-200 cursor-pointer"
                 >
                   Contact Us
@@ -26,15 +27,17 @@ const Footer = () => {
               </div>
               <div className="px-5 py-2">
                 <a
-                  href="#"
+                  href="https://codex-iter.in/community"
+                  target="_blank"
                   className="text-base leading-6 text-gray-500 hover:text-gray-200 cursor-pointer"
                 >
-                  News
+                  Community
                 </a>
               </div>
               <div className="px-5 py-2">
                 <a
-                  href="#"
+                  href="https://codex-iter.in/events"
+                  target="_blank"
                   className="text-base leading-6 text-gray-500 hover:text-gray-200 cursor-pointer"
                 >
                   Events
