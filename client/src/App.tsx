@@ -20,7 +20,7 @@ function App() {
     <Mesh />
     <Router>
     {isVisible &&
-      <div className="w-full fixed flex justify-center align-middle h-screen bg-opacity-15 backdrop-blur-md">
+      <div className="w-full fixed flex justify-center align-middle h-screen bg-opacity-15 backdrop-blur-md z-50">
         <Signin />
       </div>
     }
