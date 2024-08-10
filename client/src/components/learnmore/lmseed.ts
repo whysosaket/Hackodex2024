@@ -127,21 +127,21 @@ export const timelineData: TimelineData = {
     {
       id: 1,
       title: "Mentor Registerations",
-      date: "2023-03-30 to 2023-04-10",
+      date: "2024-08-23 to 2024-08-30",
       description:
         "Individuals who wish to be project mentors must register themselves using the Google Form available on the Registeration Page",
     },
     {
       id: 2,
       title: "Open Source Contributions",
-      date: "2023-04-08 to 2023-05-07",
+      date: "2023-09-01 to 2023-09-30",
       description:
         "Individuals can Start contributing to open-source projects under the 'hackodex2023' tag, discuss with mentors and make PRs for the same. We will track your contributions during this phase!",
     },
     {
         id: 3,
         title: "Conclusion",
-        date: "2023-04-08 to 2023-05-07",
+        date: "2023-10-02 to 2023-10-03",
         description:
           "The Event Conclude with the announcement of the Winners",
       },

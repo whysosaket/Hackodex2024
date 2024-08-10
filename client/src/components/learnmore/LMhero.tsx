@@ -1,11 +1,12 @@
 import Mascot from "../../assets/mascot.png";
 import { motion } from "framer-motion";
 import pathvector from "../../assets/pathvector.svg";
+import { isTablet } from "react-device-detect";
 
 const LMhero = () => {
   return (
     <>
-      <div className="flex md:flex-row-reverse flex-col my-8 justify-center">
+      <div className="flex md:flex-row-reverse flex-col my-8 justify-center -mb-16 md:mb-0">
         <div className="">
           <motion.img
             initial={{ opacity: 0, y: 100 }}
@@ -13,7 +14,7 @@ const LMhero = () => {
             transition={{ duration: 0.7, delay: 0.15 }}
             src={pathvector}
             alt="pathvector"
-            className="w-full absolute -z-20 left-0 bottom-0"
+            className="w-full absolute -z-20 left-0 md:bottom-0 bottom-36"
           />
         </div>
         <div className="left md:w-1/2 flex justify-center align-middle">
@@ -22,7 +23,7 @@ const LMhero = () => {
               initial={{ x: -400, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-[2rem] uppercase md:text-[4.5rem] font-semibold md:tracking-wide md:leading-[6rem] text-center md:text-left"
+              className={`text-[2rem] uppercase ${isTablet?"md:text-[3.5rem]":"md:text-[4.5rem]"} font-semibold md:tracking-wide md:leading-[6rem] text-center md:text-left`}
             >
               <span className="md:font-bold md:text-transparent md:font-outline-2 md:hover:font-outline-4">
                 BEGIN
@@ -36,7 +37,7 @@ const LMhero = () => {
             <div className="blur-3xl bg-indigo-400/15 -z-20 absolute left-0 top-44 h-[36rem] w-[20rem] rounded-b-[80rem] rounded-t-[80rem]"></div>
           </div>
         </div>
-        <div className="right md:w-1/2 flex justify-center mt-12 md:mt-0">
+        <div className="right md:w-1/2 flex justify-center">
           <motion.img
             initial={{ x: 600, opacity: 0.0, rotateY: 0 }}
             animate={{ x: 0, opacity: 1, rotateY: 180 }}
