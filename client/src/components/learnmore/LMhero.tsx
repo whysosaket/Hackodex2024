@@ -6,7 +6,7 @@ const LMhero = () => {
   return (
     <>
       <div className="flex md:flex-row-reverse flex-col my-8 justify-center">
-      <div className="">
+        <div className="">
           <motion.img
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
@@ -22,11 +22,17 @@ const LMhero = () => {
               initial={{ x: -400, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-[2.2rem] md:text-[4rem] font-semibold md:tracking-wide md:leading-[6rem] text-center md:text-left"
+              className="text-[2rem] uppercase md:text-[4.5rem] font-semibold md:tracking-wide md:leading-[6rem] text-center md:text-left"
             >
-              Begin Your Open Source Journey with Hackodex 3.0
+              <span className="md:font-bold md:text-transparent md:font-outline-2 md:hover:font-outline-4">
+                BEGIN
+              </span>{" "}
+              Your Open Source Journey with{" "}
+              <span className="md:font-bold md:text-transparent md:font-outline-2 md:hover:font-outline-4">
+                Hackodex
+              </span>
             </motion.h1>
-           
+
             <div className="blur-3xl bg-indigo-400/15 -z-20 absolute left-0 top-44 h-[36rem] w-[20rem] rounded-b-[80rem] rounded-t-[80rem]"></div>
           </div>
         </div>

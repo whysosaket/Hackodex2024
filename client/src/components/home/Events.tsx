@@ -5,7 +5,7 @@ import EventItem from "./EventItem";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 
-const items = [1, 2, 3];
+const items = [1, 2, 3, 4];
 
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
@@ -27,12 +27,12 @@ function SamplePrevArrow(props: any) {
 
 const Events = () => {
   const settings = {
-    dots: true,
-    infinite: true,
+    dots: false,
+    infinite: false,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 1000,
+    speed: 400,
     autoplaySpeed: 5000,
     cssEase: "linear",
     nextArrow: <SampleNextArrow />,
@@ -41,11 +41,11 @@ const Events = () => {
 
   const mobileSettings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 1000,
+    speed: 400,
     autoplaySpeed: 5000,
     cssEase: "linear",
     nextArrow: <SampleNextArrow />,
