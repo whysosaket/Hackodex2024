@@ -27,8 +27,38 @@ html {
   .font-outline-2 {
     -webkit-text-stroke: 2px rgb(104, 87, 254);
   }
+
+  .font-glow{
+    animation: glowAnimation 1.5s ease-in-out 1;
+    animation-delay: 1s;
+  }
+
   .font-outline-4 {
     -webkit-text-stroke: 4px rgb(143, 131, 255);
+  }
+
+  @keyframes glowAnimation {
+    0% {
+      -webkit-text-stroke: 2px rgb(104, 87, 254);
+    }
+    10% {
+      -webkit-text-stroke: 4px rgb(143, 131, 255);
+    }
+    15% {
+      -webkit-text-stroke: 2px rgb(104, 87, 254);
+    }
+    19% {
+      -webkit-text-stroke: 4px rgb(143, 131, 255);
+    }
+    45% {
+      -webkit-text-stroke: 2px rgb(104, 87, 254);
+    }
+    55% {
+      -webkit-text-stroke: 4px rgb(143, 131, 255);
+    }
+    100% {
+      -webkit-text-stroke: 2px rgb(104, 87, 254);
+    }
   }
 }
 

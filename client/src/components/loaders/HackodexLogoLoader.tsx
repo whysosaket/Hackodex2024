@@ -23,7 +23,7 @@ const HackodexLogoLoader = () => {
           className="w-64 mx-auto mt-6"
         />
       ) : (
-        <span className="font-bold text-transparent font-outline-2 hover:font-outline-4">
+        <span className="font-bold text-transparent font-outline-2 hover:font-outline-4 md:font-glow">
           HACKODEX
         </span>
       )}
