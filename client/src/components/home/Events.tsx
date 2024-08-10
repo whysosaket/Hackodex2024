@@ -3,7 +3,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import EventItem from "./EventItem";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+import { isMobile, isTablet } from 'react-device-detect';
 
 const items = [1, 2, 3, 4];
 
@@ -52,15 +53,28 @@ const Events = () => {
     prevArrow: <SamplePrevArrow />,
   };
 
-  const [isMobile, setIsMobile] = useState({});
+  const tabletSettings = {
+    dots: false,
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 400,
+    autoplaySpeed: 5000,
+    cssEase: "linear",
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+  };
 
-  useEffect(() => {
-    if (window.innerWidth < 768) {
-      setIsMobile(mobileSettings);
-    } else {
-      setIsMobile(settings);
-    }
-  }, []);
+  // const [isMobile, setIsMobile] = useState({});
+
+  // useEffect(() => {
+  //   if (window.innerWidth < 768) {
+  //     setIsMobile(mobileSettings);
+  //   } else {
+  //     setIsMobile(settings);
+  //   }
+  // }, []);
 
   return (
     <>
@@ -68,7 +82,7 @@ const Events = () => {
         Events
       </h1>
       <div className="slider-container">
-        <Slider {...isMobile}>
+        <Slider {...isMobile&&!isTablet?mobileSettings:isTablet?tabletSettings:settings}>
           {items.map((item) => (
             <EventItem key={item} />
           ))}

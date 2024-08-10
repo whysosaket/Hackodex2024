@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import logomini from "../assets/logo-mini.png";
 import logo from "../assets/logo.png";
+import { isMobile, isTablet } from 'react-device-detect';
 
 interface NavbarProps {
   setVisible: (value: boolean) => void;
@@ -24,15 +25,15 @@ const Navbar: React.FunctionComponent<NavbarProps> = (props) => {
     window.location.href = "/";
   };
 
-  const [isMobile, setIsMobile] = useState({});
+  // const [isMobile, setIsMobile] = useState({});
 
-  useEffect(() => {
-    if (window.innerWidth < 768) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.innerWidth < 768) {
+  //     setIsMobile(true);
+  //   } else {
+  //     setIsMobile(false);
+  //   }
+  // }, []);
 
   return (
     <>
@@ -42,11 +43,11 @@ const Navbar: React.FunctionComponent<NavbarProps> = (props) => {
         transition={{ duration: 0.5 }}
         className="flex justify-between px-6 md:px-12 py-3 border-b-white/20 border-b-2"
       >
-        <a href="/" className="font-bold text-3xl">
+        <Link to="/" className="font-bold text-3xl">
         {
-          isMobile?<img src={logomini} className="w-9" />:<img src={logo} className="w-40 -ml-2 my-auto" />
+          isMobile&&!isTablet?<img src={logomini} className="w-9" />:<img src={logo} className="w-40 -ml-2 my-auto" />
         }
-        </a>
+        </Link>
         {!localStorage.getItem("auth-token") && (
           <button
             onClick={handleClick}

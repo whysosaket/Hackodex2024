@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FlipWords } from "../../ui/flip-words";
 import HackodexLogoLoader from "../loaders/HackodexLogoLoader";
+import { isTablet } from "react-device-detect";
 
 
 const Hero = () => {
@@ -26,7 +27,7 @@ const Hero = () => {
               initial={{ x: -400, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="fonnt-inter text-[1.8rem] md:text-[4.5rem] font-semibold md:tracking-wide md:leading-[6rem] text-center md:text-left"
+              className={`font-inter ${isTablet?"md:text-[3.2rem]":"md:text-[4.5rem]"} text-[1.8rem] font-semibold md:tracking-wide md:leading-[6rem] text-center md:text-left`}
             >
               <FlipWords words={["BUILD", "HACK"]} className="-ml-3 md:font-outline-2 text-white md:text-transparent" />
               <span className="md:ml-2 md:mr-3">AND LEARN WITH</span>
