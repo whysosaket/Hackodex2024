@@ -1,10 +1,11 @@
-import Mascot from "../../assets/mascot.png";
+import Mascot from "../../assets/lottie/1.json";
 import pathvector from "../../assets/pathvector.svg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FlipWords } from "../../ui/flip-words";
 import HackodexLogoLoader from "../loaders/HackodexLogoLoader";
 import { isTablet } from "react-device-detect";
+import Lottie from "lottie-react";
 
 
 const Hero = () => {
@@ -76,14 +77,16 @@ const Hero = () => {
           </div>
         </div>
         <div className="right md:w-1/2 flex justify-center">
-          <motion.img
+          <motion.div
             initial={{ x: 400, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            src={Mascot}
-            alt="mascot"
-            className="md:w-4/5 mx-auto"
-          />
+            // src={Mascot}
+            // alt="mascot"
+            className="md:w-4/5 mx-auto flex justify-center align-middle"
+          >
+            <Lottie animationData={Mascot} loop={true} className="md:w-[80rem] m-auto" />
+          </motion.div>
           <div className="blur-3xl bg-indigo-400/20 -z-10 absolute h-[36rem] w-[20rem] rounded-b-[80rem] rounded-t-[80rem]"></div>
         </div>
       </div>
