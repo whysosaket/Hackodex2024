@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import RepoItem from "../components/repos/RepoItem";
 import { motion } from "framer-motion";
+import ContributionItemLoader from "../components/loaders/RepoItemLoader";
 
 const topic = "hackodex2024";
 
 const Repos = () => {
   const [repos, setRepos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // don't touch this line below
@@ -16,6 +18,7 @@ const Repos = () => {
 
   const getRepos = async () => {
     try {
+      setLoading(true);
       const response = await fetch(
         `https://api.github.com/search/repositories?q=topic:${topic}`,
         {
@@ -31,7 +34,7 @@ const Repos = () => {
 
       const data = await response.json();
       const repositories = data.items;
-
+      setLoading(false);
       const filteredRepos = repositories.map((repo: any) => {
         return {
           name: repo.name,
@@ -44,7 +47,7 @@ const Repos = () => {
       });
       setRepos(filteredRepos);
     } catch (err) {
-
+      setLoading(true);
     }
   };
 
@@ -72,6 +75,46 @@ const Repos = () => {
             </motion.div>
           );
         })}
+         {
+            loading&&<>
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 + 0 / 10 }}
+              className="md:w-1/2 flex justify-center"
+              
+            >
+              <ContributionItemLoader />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 + 1 / 10 }}
+              className="md:w-1/2 flex justify-center"
+              
+            >
+              <ContributionItemLoader />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 + 2 / 10 }}
+              className="md:w-1/2 flex justify-center"
+              
+            >
+              <ContributionItemLoader />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 + 3 / 10 }}
+              className="md:w-1/2 flex justify-center"
+              
+            >
+              <ContributionItemLoader />
+            </motion.div>
+            </>
+          }
       </div>
     </div>
   );
