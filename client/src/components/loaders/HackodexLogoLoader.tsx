@@ -1,20 +1,22 @@
 import logo from "../../assets/logo.png";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
+import { isMobile,isTablet } from 'react-device-detect';
 
 const HackodexLogoLoader = () => {
-  const [isMobile, setIsMobile] = useState({});
+  // const [isMobile, setIsMobile] = useState(true);
 
-  useEffect(() => {
-    if (window.innerWidth < 768) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  }, []);
+  // useEffect(() => {
+  //   console.log("hiii");
+  //   if (window.innerWidth < 768) {
+  //     setIsMobile(true);
+  //   } else {
+  //     setIsMobile(false);
+  //   }
+  // }, []);
   return (
     <>
-      {isMobile ? (
+      {isMobile&&!isTablet ? (
         <motion.img
           initial={{ opacity: 0, filter: "blur(10px)" }}
           animate={{ opacity: 1, filter: "blur(0px)" }}
